@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" # Location of your dependency files
+    schedule:
+      interval: "daily" # Options: daily, weekly, monthly
+    commit-message:
+      prefix: "deps"
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "example"
+        versions: ["1.0.0"]
