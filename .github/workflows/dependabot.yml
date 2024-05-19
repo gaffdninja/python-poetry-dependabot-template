@@ -19,4 +19,4 @@ jobs:
         run: |
           dependabot update --package-manager=pip --directory=/
         env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
