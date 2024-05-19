@@ -15,10 +15,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7' # Specify the Ruby version here
-      - name: Install Dependabot
-        run: gem install dependabot-cli
+      - name: Install Bundler
+        run: gem install bundler
+      - name: Install Dependabot Core
+        run: |
+          gem install dependabot-core
+          gem install dependabot-common
       - name: Run Dependabot
         run: |
-          dependabot update --package-manager=pip --directory=/
+          bundle exec dependabot update --package-manager=pip --directory=/
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
