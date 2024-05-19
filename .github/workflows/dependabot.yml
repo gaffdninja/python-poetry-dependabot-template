@@ -21,6 +21,6 @@ jobs:
         run: bundle install
       - name: Run Dependabot
         run: |
-          bundle exec dependabot update --package-manager=pip --directory=/
+          ruby dependabot-script.rb
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
