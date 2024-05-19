@@ -17,8 +17,8 @@ jobs:
           ruby-version: '2.7.8' # Specify the Ruby version here
       - name: Install Bundler
         run: gem install bundler -v 2.4.22
-      - name: Install Dependabot Core
-        run: gem install dependabot-core
+      - name: Install Dependencies
+        run: bundle install
       - name: Run Dependabot
         run: |
           bundle exec dependabot update --package-manager=pip --directory=/
